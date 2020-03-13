@@ -1,0 +1,358 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Trivago_호텔_데이터_입력" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="612,1517.6" sap2010:WorkflowViewState.IdRef="Trivago_호텔_데이터_입력_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="23">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="17">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Trivago_호텔_데이터_입력" sap:VirtualizedContainerService.HintSize="592,1457.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  mf-select-sortby'" sap:VirtualizedContainerService.HintSize="550.4,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="요금만">
+      <ui:SelectItem.Items>
+        <scg:List x:TypeArguments="x:String" Capacity="8">
+          <x:String>추천</x:String>
+          <x:String>평점 및 추천</x:String>
+          <x:String>요금 및 추천</x:String>
+          <x:String>거리 및 추천</x:String>
+          <x:String>평점만</x:String>
+          <x:String>요금만</x:String>
+          <x:String>거리만</x:String>
+        </scg:List>
+      </ui:SelectItem.Items>
+      <ui:SelectItem.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7d63fd523014419cc08d7c8c825916c6" Selector="&lt;html title='다낭 호텔 | 트리바고 특가 상품 검색 및 요금 비교' /&gt;&lt;webctrl id='mf-select-sortby' tag='SELECT' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:SelectItem.Target>
+    </ui:SelectItem>
+    <Sequence DisplayName="Data Scraping_Key" sap:VirtualizedContainerService.HintSize="550.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_26">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dt_key" />
+        <Variable x:TypeArguments="ui:GenericValue" Default="[1]" Name="i" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser '          Page'" sap:VirtualizedContainerService.HintSize="641.6,1240" sap2010:WorkflowViewState.IdRef="BrowserScope_9" InformativeScreenshot="a7cbb9348d17a942cc4fc8137e2d952c" Selector="&lt;html title='*' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="608,1092.8" sap2010:WorkflowViewState.IdRef="Sequence_25">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ExtractData ContinueOnError="True" DataTable="[dt_key]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'OL  js_itemlist'" ExtractMetadata="&lt;extract&gt;&lt;column attr='text' name='Column1' exact='1'&gt;&lt;webctrl tag='li' class='hotel-item item-order__list-item js_co_item' /&gt;&lt;webctrl tag='article' class='item bg-white' idx='1' /&gt;&lt;webctrl tag='div' class='pos-relative item__wrapper' idx='1' /&gt;&lt;webctrl tag='div' class='item__flex-column' idx='1' /&gt;&lt;webctrl tag='div' class='item__details item__details--layout' idx='1' /&gt;&lt;webctrl tag='div' class='location ov-hidden' idx='1' /&gt;&lt;webctrl tag='div' class='item-link' idx='1' /&gt;&lt;webctrl tag='p' class='details-paragraph details-paragraph--location location-details' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="566.4,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_9" MaxNumberOfResults="0" NextLinkSelector="&lt;webctrl aaname='다음' parentid='js_item_list_section' tag='BUTTON' type='button' /&gt;">
+                <ui:ExtractData.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1f50b96d8be1a2057dc18759a116cb3b" Selector="&lt;webctrl id='js_itemlist' tag='OL' /&gt;" WaitForReady="COMPLETE" />
+                </ui:ExtractData.Target>
+              </ui:ExtractData>
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_key]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="566.4,852.8" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                    </ActivityAction.Argument>
+                    <Sequence sap:VirtualizedContainerService.HintSize="516.8,704" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="475.2,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="ui:GenericValue">[i]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="ui:GenericValue">[i+1]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="475.2,511.2" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="433.6,418.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" Visible="False" WorkbookPath="호텔예약.xlsx">
+                          <ui:ExcelApplicationScope.Body>
+                            <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                              </ActivityAction.Argument>
+                              <Sequence sap:VirtualizedContainerService.HintSize="375.2,308.8" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:ExcelWriteCell Cell="[&quot;A&quot;+i]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_1" SheetName="trivago" Text="[i-1]" />
+                                <ui:ExcelWriteCell Cell="[&quot;B&quot;+i]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_2" SheetName="trivago" Text="[row(0).tostring.substring(0,2)]" />
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ExcelApplicationScope.Body>
+                        </ui:ExcelApplicationScope>
+                      </Sequence>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+              </ui:ForEachRow>
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+      </ui:BrowserScope>
+    </Sequence>
+    <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="550.4,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="7044994d0692838d0107c0d6b286799a" Selector="&lt;html title='다낭 호텔(요금만) | 트리바고 특가 상품 검색 및 요금 비교' /&gt;&lt;webctrl parentid='js-fullscreen-hero' tag='BUTTON' type='submit' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:Click.Target>
+    </ui:Click>
+    <Sequence DisplayName="Data Scraping_Title" sap:VirtualizedContainerService.HintSize="550.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_31">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser '          Page'" sap:VirtualizedContainerService.HintSize="433.6,440" sap2010:WorkflowViewState.IdRef="BrowserScope_11" InformativeScreenshot="e20c1f375b112d092028fab6c6902d01" Selector="&lt;html title='*' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.2,292.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="sd:DataTable" Name="dt_Title" />
+                <Variable x:TypeArguments="ui:GenericValue" Default="[1]" Name="int_order" />
+                <Variable x:TypeArguments="x:String" Name="str_Title" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ExtractData ContinueOnError="True" DataTable="[dt_Title]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'OL  js_itemlist'" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Title' attr='text'&gt;&lt;webctrl class='hotel-item item-order__list-item js_co_item' tag='li' /&gt;&lt;webctrl class='item bg-white' tag='article' idx='1' /&gt;&lt;webctrl class='pos-relative item__wrapper' tag='div' idx='1' /&gt;&lt;webctrl class='item__flex-column' tag='div' idx='1' /&gt;&lt;webctrl class='item__details item__details--layout' tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_11" MaxNumberOfResults="0" NextLinkSelector="&lt;webctrl aaname='다음' parentid='js_item_list_section' tag='BUTTON' type='button' /&gt;">
+                <ui:ExtractData.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="e6749c9dd51ae7de734f9c23de550db0" Selector="&lt;webctrl id='js_itemlist' tag='OL' /&gt;" WaitForReady="COMPLETE" />
+                </ui:ExtractData.Target>
+              </ui:ExtractData>
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_Title]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1316.8,733.6" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="1275.2,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="ui:GenericValue">[int_order]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="ui:GenericValue">[int_order+1]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="1275.2,540.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" Visible="False" WorkbookPath="호텔예약.xlsx">
+                        <ui:ExcelApplicationScope.Body>
+                          <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                            </ActivityAction.Argument>
+                            <Sequence sap:VirtualizedContainerService.HintSize="1241.6,431.2" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[if(row(0).tostring.contains(&quot;호텔&quot;),&quot;호텔&quot;,if(row(0).tostring.contains(&quot;주택/아파트&quot;),&quot;주택/아파트&quot;,if(row(0).tostring.contains(&quot;펜션/모텔&quot;),&quot;펜션/모텔&quot;,if(row(0).tostring.contains(&quot;Motel&quot;),&quot;Motel&quot;,&quot;Default&quot;))))]" sap:VirtualizedContainerService.HintSize="1200,210.4" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+                                <Switch.Default>
+                                  <Assign sap:VirtualizedContainerService.HintSize="263.2,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:String">[str_Title]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:String">[row(0).tostring.substring(0,row(0).tostring.indexof("Hostel")).Trim]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Switch.Default>
+                                <Assign x:Key="호텔" sap:VirtualizedContainerService.HintSize="263.2,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[str_Title]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[row(0).tostring.substring(0,row(0).tostring.indexof("호텔")).Trim]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign x:Key="주택/아파트" sap:VirtualizedContainerService.HintSize="263.2,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[str_Title]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[row(0).tostring.substring(0,row(0).tostring.indexof("주택/아파트")).trim]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign x:Key="펜션/모텔" sap:VirtualizedContainerService.HintSize="263.2,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[str_Title]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[row(0).tostring.substring(0,row(0).tostring.indexof("펜션/모텔")).trim]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign x:Key="Motel" sap:VirtualizedContainerService.HintSize="263.2,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[str_Title]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[row(0).tostring.substring(0,row(0).tostring.indexof("Motel")).trim]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Switch>
+                              <ui:ExcelWriteCell Cell="[&quot;C&quot;+int_order]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="1200,88" sap2010:WorkflowViewState.IdRef="ExcelWriteCell_3" SheetName="trivago" Text="[str_Title]" />
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ExcelApplicationScope.Body>
+                      </ui:ExcelApplicationScope>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:ForEachRow>
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:BrowserScope>
+    </Sequence>
+    <ui:Click DelayBefore="{x:Null}" ClickType="CLICK_SINGLE" DelayMS="2000" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="550.4,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+      <ui:Click.CursorPosition>
+        <ui:CursorPosition Position="Center">
+          <ui:CursorPosition.OffsetX>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetX>
+          <ui:CursorPosition.OffsetY>
+            <InArgument x:TypeArguments="x:Int32" />
+          </ui:CursorPosition.OffsetY>
+        </ui:CursorPosition>
+      </ui:Click.CursorPosition>
+      <ui:Click.Target>
+        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="22f6f0136c3094b3b3c0f7f0ef00fdfd" Selector="&lt;html title='다낭 호텔(요금만) | 트리바고 특가 상품 검색 및 요금 비교' /&gt;&lt;webctrl parentid='js-fullscreen-hero' tag='BUTTON' type='submit' /&gt;" WaitForReady="INTERACTIVE" />
+      </ui:Click.Target>
+    </ui:Click>
+    <Sequence DisplayName="Data Scraping_remaining" sap:VirtualizedContainerService.HintSize="550.4,677.6" sap2010:WorkflowViewState.IdRef="Sequence_45">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dt_remaining" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser '          Page'" sap:VirtualizedContainerService.HintSize="508.8,584.8" sap2010:WorkflowViewState.IdRef="BrowserScope_14" InformativeScreenshot="ff341b868a5f31e29b80bffb57d04bf6" Selector="&lt;html title='다낭 호텔(요금만) | 트리바고 특가 상품 검색 및 요금 비교' /&gt;">
+        <ui:BrowserScope.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,437.6" sap2010:WorkflowViewState.IdRef="Sequence_44">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:ExtractData ContinueOnError="True" DataTable="[dt_remaining]" DelayBetweenPagesMS="300" DisplayName="Extract Structured Data 'OL  js_itemlist'" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl class='hotel-item item-order__list-item js_co_item' tag='li' /&gt;&lt;webctrl class='item bg-white' tag='article' idx='1' /&gt;&lt;webctrl class='pos-relative item__wrapper' tag='div' idx='1' /&gt;&lt;webctrl class='item__flex-column' tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='shortDescription' attr='text'&gt;&lt;webctrl class='hotel-item item-order__list-item js_co_item' tag='li' /&gt;&lt;webctrl class='item bg-white' tag='article' idx='1' /&gt;&lt;webctrl class='pos-relative item__wrapper' tag='div' idx='1' /&gt;&lt;webctrl class='item__flex-column' tag='div' idx='1' /&gt;&lt;webctrl class='item__details item__details--layout' tag='div' idx='1' /&gt;&lt;webctrl class='location ov-hidden' tag='div' idx='1' /&gt;&lt;webctrl class='item-link' tag='div' idx='1' /&gt;&lt;webctrl class='details-paragraph details-paragraph--location location-details' tag='p' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='travelAgency' attr='text'&gt;&lt;webctrl class='hotel-item item-order__list-item js_co_item' tag='li' /&gt;&lt;webctrl class='item bg-white' tag='article' idx='1' /&gt;&lt;webctrl class='pos-relative item__wrapper' tag='div' idx='1' /&gt;&lt;webctrl class='item__flex-column' tag='div' idx='1' /&gt;&lt;webctrl class='accommodation-list__prices--dfcb3' tag='section' idx='1' /&gt;&lt;webctrl class='accommodation-list__row--57d49' tag='div' idx='1' /&gt;&lt;webctrl class='accommodation-list__cheapest--28ced accommodation-list__article--34e10' tag='article' idx='1' /&gt;&lt;webctrl class='accommodation-list__button--3d73c accommodation-list__button--31bb8' tag='button' idx='1' /&gt;&lt;webctrl class='accommodation-list__deal--6f1fa accommodation-list__deal--40530' tag='span' idx='1' /&gt;&lt;webctrl class='accommodation-list__partner--b8765' tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Price' attr='text'&gt;&lt;webctrl class='hotel-item item-order__list-item js_co_item' tag='li' /&gt;&lt;webctrl class='item bg-white' tag='article' idx='1' /&gt;&lt;webctrl class='pos-relative item__wrapper' tag='div' idx='1' /&gt;&lt;webctrl class='item__flex-column' tag='div' idx='1' /&gt;&lt;webctrl class='accommodation-list__prices--dfcb3' tag='section' idx='1' /&gt;&lt;webctrl class='accommodation-list__row--57d49' tag='div' idx='1' /&gt;&lt;webctrl class='accommodation-list__cheapest--28ced accommodation-list__article--34e10' tag='article' idx='1' /&gt;&lt;webctrl class='accommodation-list__button--3d73c accommodation-list__button--31bb8' tag='button' idx='1' /&gt;&lt;webctrl class='accommodation-list__deal--6f1fa accommodation-list__deal--40530' tag='span' idx='1' /&gt;&lt;webctrl class='accommodation-list__price--221e3 accommodation-list__price--1461d' tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="433.6,107.2" sap2010:WorkflowViewState.IdRef="ExtractData_14" MaxNumberOfResults="0" NextLinkSelector="&lt;webctrl aaname='다음' parentid='js_item_list_section' tag='BUTTON' type='button' /&gt;">
+                <ui:ExtractData.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8c65b6e246412fb73456e576903969f5" Selector="&lt;webctrl id='js_itemlist' tag='OL' /&gt;" WaitForReady="COMPLETE" />
+                </ui:ExtractData.Target>
+              </ui:ExtractData>
+              <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="433.6,197.6" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_4" Visible="False" WorkbookPath="호텔예약.xlsx">
+                <ui:ExcelApplicationScope.Body>
+                  <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                    </ActivityAction.Argument>
+                    <ui:ExcelWriteRange AddHeaders="False" DataTable="[dt_remaining]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="trivago" StartingCell="D2" />
+                  </ActivityAction>
+                </ui:ExcelApplicationScope.Body>
+              </ui:ExcelApplicationScope>
+            </Sequence>
+          </ActivityAction>
+        </ui:BrowserScope.Body>
+      </ui:BrowserScope>
+    </Sequence>
+  </Sequence>
+</Activity>
